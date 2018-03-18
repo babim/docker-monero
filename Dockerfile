@@ -13,6 +13,16 @@ RUN cd /root && \
     rm monero-linux-x64-v$VERSION.tar.bz2 &&\
     mv monero-v$VERSION monero
 
+# clean
+RUN apt-get purge wget -y && \
+    apt-get clean && \
+    apt-get autoclean && \
+    apt-get autoremove -y && \
+    rm -rf /build && \
+    rm -rf /tmp/* /var/tmp/* && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm -f /etc/dpkg/dpkg.cfg.d/02apt-speedup
+
 # Contains the blockchain
 VOLUME /root/.bitmonero
 
