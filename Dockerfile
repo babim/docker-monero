@@ -1,4 +1,3 @@
-
 FROM babim/ubuntubase
 
 ENV SRC_DIR /usr/local/src/monero
