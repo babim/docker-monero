@@ -1,7 +1,7 @@
-
 FROM babim/alpinebase:edge
 
-RUN apk --no-cache add monero
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+    apk --no-cache add monero
 
 # Contains the blockchain
 VOLUME /root/.bitmonero
