@@ -5,7 +5,7 @@ ENV VERSION 0.11.1.0
 
 RUN set -x \
   && apt-get -qq update \
-  && apt-get -qq --no-install-recommends install wget
+  && apt-get -qq --no-install-recommends install wget tar bzip2
   
 RUN cd /root && \
     wget https://github.com/monero-project/monero/releases/download/v$VERSION/monero-linux-x64-v$VERSION.tar.bz2 && \
